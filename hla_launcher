@@ -1,0 +1,10 @@
+#!/bin/bash
+
+WORDSIZE=$(getconf LONG_BIT)
+
+if [ $WORDSIZE -eq 64 ]; then
+    echo -e "\n[64] Wordsize set. \"-m elf_i386\"\n"
+    _hla -l"m elf_i386" $*
+else
+    _hla $*
+fi;
