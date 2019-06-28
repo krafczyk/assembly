@@ -11,7 +11,8 @@ it seemed there was some kind of circular dependency. hlaparse required hlalib,
 and hlalib required hlaparse. I didn't have the time to really try to fix this
 issue, so a little google searching lead me to the following blog post:
 http://hypervion.blogspot.com/2013/12/hla-issues-when-linking-with-ld-binary.html
-Instructing the right way to fix this issue.
+Instructing the right way to fix this issue. Thanks to Hyperion for figuring
+this solution out and posting it out online!
 
 It turns out that the hla program can be passed linker options which we must do
 in our case as the linker must link in 32bit compatibility mode. The procedure
