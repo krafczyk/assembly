@@ -7,14 +7,14 @@ begin allocTest;
 
     mem.alloc(@size(uns32)*128);
     mov(eax,ecx);
-    for(mov(0,ebx); ebx < 128; add(1, ebx)) do
+    for(mov(0,ebx); ebx < 128; inc(ebx)) do
         mov(ebx, eax);
-        mul(a);
-        mov(eax, (type uns32 [ecx+ebx*@size(uns32)]));
+        intmul(a, eax);
+        mov(eax, (type uns32 [ecx+ebx*4]));
     endfor;
 
-    for(mov(0,ebx); ebx < 128; add(1, ebx)) do
-        stdout.put((type uns32 [ecx+ebx*@size(uns32)]), nl);
+    for(mov(0,ebx); ebx < 128; inc(ebx)) do
+        stdout.put((type uns32 [ecx+ebx*4]), nl);
     endfor;
     mem.free(ecx);
 
