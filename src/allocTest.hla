@@ -1,0 +1,21 @@
+program allocTest;
+#include("stdlib.hhf")
+static;
+    a: uns32 := 3;
+
+begin allocTest;
+
+    mem.alloc(@size(uns32)*128);
+    mov(eax,ecx);
+    for(mov(0,ebx); ebx < 128; add(1, ebx)) do
+        mov(ebx, eax);
+        mul(a);
+        mov(eax, (type uns32 [ecx+ebx*@size(uns32)]));
+    endfor;
+
+    for(mov(0,ebx); ebx < 128; add(1, ebx)) do
+        stdout.put((type uns32 [ecx+ebx*@size(uns32)]), nl);
+    endfor;
+    mem.free(ecx);
+
+end allocTest;
