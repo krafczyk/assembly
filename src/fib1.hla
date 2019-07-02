@@ -1,0 +1,22 @@
+program fib1;
+#include("stdlib.hhf")
+
+begin fib1;
+
+mov(0, ebx);
+mov(1, eax);
+mov(0, ecx);
+stdout.put("F[", (type uns32 ecx), "]= ", (type uns32 ebx), nl);
+inc(ecx);
+repeat;
+    // Report
+    stdout.put("F[", (type uns32 ecx), "]= ", (type uns32 eax), nl)
+    inc(ecx);
+    // Swap
+    xor(eax,ebx);
+    xor(ebx,eax);
+    xor(eax,ebx);
+    add(ebx,eax);
+until (@c);
+
+end fib1;
