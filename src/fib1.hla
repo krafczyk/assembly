@@ -10,7 +10,7 @@ stdout.put("F[", (type uns32 ecx), "]= ", (type uns32 ebx), nl);
 inc(ecx);
 repeat;
     // Report
-    stdout.put("F[", (type uns32 ecx), "]= ", (type uns32 eax), nl)
+    stdout.put("F[", (type uns32 ecx), "]= ", (type uns32 eax), nl);
     inc(ecx);
     // Swap
     xor(eax,ebx);
